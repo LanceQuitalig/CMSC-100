@@ -7,14 +7,17 @@ export const getManyToDo = async (request, reply) => {
 
   const list = [];
 
-  const todos = Object.entries(db.todos).map(([id, todo]) => {
-    return {
-      id,
-      ...todo
-    };
-  }).sort((todo1, todo2) => {
-    return todo2.createDate - todo1.createDate;
-  });
+  const todos = Object
+    .entries(db.todos)
+    .map(function ([id, todo]) {
+      return {
+        id,
+        ...todo
+      };
+    })
+    .sort(function (todo1, todo2) {
+      return todo2.createDate - todo1.createDate;
+    });
 
   for (const todo of todos) {
     list.push(todo);
