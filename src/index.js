@@ -7,7 +7,7 @@ async function start () {
     const addr = await fastify.listen({
       port: '8080'
     });
-    console.log('Listening on %s', addr);
+    console.log(`Listening on ${addr}`);
   } catch (error) {
     // Error printing
     console.error(error);
