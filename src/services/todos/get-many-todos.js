@@ -16,7 +16,7 @@ export const getManyToDo = async (request, reply) => {
       };
     })
     .sort(function (todo1, todo2) {
-      return todo2.createDate - todo1.createDate;
+      return todo2.createdDate - todo1.createdDate;
     });
 
   for (const todo of todos) {
