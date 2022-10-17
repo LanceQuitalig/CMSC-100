@@ -3,6 +3,7 @@ import { general } from './services/general/index.js';
 import { createToDo } from './services/todos/create-todo.js';
 import { getManyToDo } from './services/todos/get-many-todos.js';
 import { getToDo } from './services/todos/get-todo.js';
+import { updateToDo } from './services/todos/update-todo.js';
 
 const prefix = '/api';
 
@@ -20,6 +21,9 @@ export async function build () {
 
   // Get one ToDo
   fastify.get(`${prefix}/todo/:todoID`, getToDo);
+
+  // Update one ToDo
+  fastify.put(`${prefix}/todo/:todoID`, updateToDo);
 
   return fastify;
 }
