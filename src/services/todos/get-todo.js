@@ -6,6 +6,11 @@ export const getToDo = async (request, reply) => {
   const db = await getDB();
 
   const { todos } = db;
+
+  if (!todos[id]) {
+    return reply.notFound();
+  }
+
   return {
     id,
     ...todos[id]
